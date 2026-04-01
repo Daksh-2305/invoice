@@ -1,0 +1,16 @@
+{
+  "name": "BillSaathi",
+  "short_name": "BillSaathi",
+  "description": "Your Billing Partner — Free Invoice Generator",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#f97316",
+  "icons": [
+    {
+      "src": "/pwa-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* === RED & NAVY SAAS THEME (LIGHT MODE) === */
+  :root, .theme-sunset {
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 0 84% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 0 84% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 0 84% 60%;
+    --radius: 0.625rem;
+  }
+
+  .dark, .dark.theme-sunset {
+    --background: 222 47% 5%;
+    --foreground: 210 40% 96%;
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 96%;
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 0 84% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 222 47% 10%;
+    --secondary-foreground: 210 40% 90%;
+    --muted: 222 47% 13%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 0 84% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 222 47% 12%;
+    --input: 222 47% 12%;
+    --ring: 0 84% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .pb-safe-area-inset-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .pt-safe-area-inset-top {
+    padding-top: env(safe-area-inset-top);
+  }
+}
+
+/* Barcode Scanner Native Transparency */
+body.barcode-scanner-active {
+  background-color: transparent !important;
+}
+
+body.barcode-scanner-active #root,
+body.barcode-scanner-active .bg-background {
+  background-color: transparent !important;
+}
+
+body.barcode-scanner-active header,
+body.barcode-scanner-active nav,
+body.barcode-scanner-active .app-navbar,
+body.barcode-scanner-active .app-sidebar,
+body.barcode-scanner-active .app-bottom-nav,
+body.barcode-scanner-active .bg-card,
+body.barcode-scanner-active .absolute.blur-\[120px\],
+body.barcode-scanner-active .absolute.blur-\[150px\],
+body.barcode-scanner-active .absolute.blur-\[100px\] {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+@keyframes scan-slow {
+  0%, 100% { transform: translateY(-100%); opacity: 0.2; }
+  50% { transform: translateY(100%); opacity: 0.8; }
+}
+
+.animate-scan-slow {
+  animation: scan-slow 2s ease-in-out infinite;
+}

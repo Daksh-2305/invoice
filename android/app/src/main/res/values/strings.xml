@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">BillSaathi</string>
+    <string name="title_activity_main">BillSaathi</string>
+    <string name="package_name">com.billsaathi.app</string>
+    <string name="custom_url_scheme">com.billsaathi.app</string>
+</resources>
